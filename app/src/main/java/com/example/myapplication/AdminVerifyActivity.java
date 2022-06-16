@@ -9,7 +9,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,7 +23,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
 import java.io.File;
 import java.io.IOException;
@@ -39,6 +37,7 @@ public class AdminVerifyActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     Complaint complaint;
     String address,adminStatus,citizenStatus,latitude,longitude,userID,driverID,citizenImageFilename,driverImageFilename;
+    int fragmentID = 1;
 
     ImageView imageView;
     ImageView imageView1;
@@ -57,9 +56,6 @@ public class AdminVerifyActivity extends AppCompatActivity {
         txtcitizenlongitude = (TextView) findViewById(R.id.txt_citizenlongitude);
         btnaccept = (Button) findViewById(R.id.btn_accept);
         btnreject = (Button) findViewById(R.id.btn_reject);
-
-//        getSupportActionBar().hide();
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         complaint = getIntent().getParcelableExtra("complaints");
 //        txtdriverlatitude.setText(getIntent().getParcelableExtra("driverlatitude"));
@@ -140,9 +136,11 @@ public class AdminVerifyActivity extends AppCompatActivity {
                 if (adminStatus.equals("No Actions Taken")){
                     adminStatus = "Complaint Verified";
                     citizenStatus = "Complaint Verified";
+                    fragmentID = 1;
                 }else{
                     adminStatus = "Complaint Resolved";
                     citizenStatus = "Complaint Resolved";
+                    fragmentID = 5;
                 }
                 Map<String,Object> map = new HashMap<>();
                 map.put("address",address);
@@ -153,12 +151,15 @@ public class AdminVerifyActivity extends AppCompatActivity {
                 map.put("longitude",longitude);
                 map.put("userID",userID);
 
+                String complaintKey = "";
+                complaintKey = address + ' ' +latitude.replace('.',',') + ' ' + longitude.replace('.',',');
                 databaseReference = FirebaseDatabase.getInstance().getReference("Complaints");
-                databaseReference.child(address).updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                databaseReference.child(complaintKey).updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         Toast.makeText(AdminVerifyActivity.this,adminStatus, Toast.LENGTH_SHORT).show();
-                        Intent it = new Intent(AdminVerifyActivity.this,AdminHomeActivity.class);
+                        Intent it = new Intent(AdminVerifyActivity.this, AdminHomeActivity.class);
+                        it.putExtra("fragmentId",fragmentID);
                         startActivity(it);
                         finish();
                     }
@@ -190,14 +191,13 @@ public class AdminVerifyActivity extends AppCompatActivity {
                 if (adminStatus.equals("No Actions Taken")){
                     databaseReference.child(address).removeValue();
                     Toast.makeText(AdminVerifyActivity.this,"Complaint Rejected",Toast.LENGTH_SHORT).show();
-                    //Map<String,Object> map = new HashMap<>();
-                    //map.put("driverImageFilename","123");
-                    Intent it = new Intent(AdminVerifyActivity.this,AdminHomeActivity.class);
+                    Intent it = new Intent(AdminVerifyActivity.this, AdminHomeActivity.class);
+                    it.putExtra("fragmentId",1);
                     startActivity(it);
                     finish();
                 }else{
                     adminStatus = "Driver Added";
-                    //String DriverImageFile="123";
+                    citizenStatus = "Processing";
                     Map<String,Object> map = new HashMap<>();
                     map.put("address",address);
                     map.put("adminStatus",adminStatus);
@@ -206,16 +206,17 @@ public class AdminVerifyActivity extends AppCompatActivity {
                     map.put("lattitude",latitude);
                     map.put("longitude",longitude);
                     map.put("userID",userID);
-                    //
                     map.put("driverImageFilename","123");
-                    //
 
+                    String complaintKey = "";
+                    complaintKey = address + ' ' +latitude.replace('.',',') + ' ' + longitude.replace('.',',');
                     databaseReference = FirebaseDatabase.getInstance().getReference("Complaints");
-                    databaseReference.child(address).updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    databaseReference.child(complaintKey).updateChildren(map).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             Toast.makeText(AdminVerifyActivity.this,"Rejected", Toast.LENGTH_SHORT).show();
-                            Intent it = new Intent(AdminVerifyActivity.this,AdminHomeActivity.class);
+                            Intent it = new Intent(AdminVerifyActivity.this, AdminHomeActivity.class);
+                            it.putExtra("fragmentId",3);
                             startActivity(it);
                             finish();
                         }

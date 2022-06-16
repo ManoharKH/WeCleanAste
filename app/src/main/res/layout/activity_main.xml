@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/btn_login"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
@@ -154,7 +154,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9"
         app:layout_constraintVertical_bias="0.032" />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/btn_signup"
         android:layout_width="331dp"
         android:layout_height="60dp"

@@ -5,9 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -21,8 +21,10 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.core.Tag;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -49,11 +51,6 @@ public class MainActivity extends AppCompatActivity {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         mAuth = FirebaseAuth.getInstance();
-
-        getSupportActionBar().hide();
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-
 //        databaseReference = FirebaseDatabase.getInstance().getReference("Users");
 
         // Working with Date
@@ -99,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
                                                     if(task.isSuccessful())
                                                     {
                                                         Toast.makeText(MainActivity.this,"User Registered Successfully" , Toast.LENGTH_SHORT).show();
+                                                        sendEmailVerifcation();
                                                         Intent it = new Intent(MainActivity.this,LoginActivity.class);
                                                         startActivity(it);
                                                     }
@@ -106,6 +104,18 @@ public class MainActivity extends AppCompatActivity {
                                                         Toast.makeText(MainActivity.this,"Not able to register",Toast.LENGTH_SHORT).show();
                                                     }
 
+                                                }
+
+                                                private void sendEmailVerifcation() {
+                                                    FirebaseUser currentUser = mAuth.getCurrentUser();
+                                                    currentUser.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                        @Override
+                                                        public void onComplete(@NonNull Task<Void> task) {
+                                                            if (task.isSuccessful()){
+                                                                Log.d("","Email sent");
+                                                            }
+                                                        }
+                                                    });
                                                 }
                                             });
                                         }

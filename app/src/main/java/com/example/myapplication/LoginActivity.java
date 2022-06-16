@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -24,7 +24,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.android.material.button.MaterialButton;
 
 import java.text.SimpleDateFormat;
 
@@ -44,10 +43,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-
-        //getSupportActionBar().hide();
-        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         txtusername = (EditText) findViewById(R.id.editTextTextEmailAddress);
         txtpassword = (EditText) findViewById(R.id.editTextTextPassword);
@@ -101,7 +96,6 @@ public class LoginActivity extends AppCompatActivity {
                 String password = txtpassword.getText().toString().trim();
 
                 if(!username.isEmpty() && !password.isEmpty()){
-
                     mAuth.signInWithEmailAndPassword(username,password)
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
@@ -133,12 +127,26 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this,"Enter valid email and password",Toast.LENGTH_SHORT).show();
                 }
             }
+
+
         });
 
         tv_forgotpassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(LoginActivity.this,ForgotPasswordActivity.class));
+            }
+        });
+    }
+
+    private void sendEmailVerifcation() {
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        currentUser.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    Toast.makeText(LoginActivity.this,"Verification link has been sent.",Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

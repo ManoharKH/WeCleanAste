@@ -52,27 +52,27 @@ public class DriverHomeActivity extends AppCompatActivity implements ComplaintDr
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_home);
 
-        mAuth = FirebaseAuth.getInstance();
         drivercomplaintRV = findViewById(R.id.drivercomplaint_RV);
         complaintArrayList = new ArrayList<>();
         bottomSheetRL = findViewById(R.id.idRLbottomSheet_driver);
         complaintDriverAdapter = new ComplaintDriverAdapter(complaintArrayList,this,this);
         drivercomplaintRV.setLayoutManager(new LinearLayoutManager(this));
         drivercomplaintRV.setAdapter(complaintDriverAdapter);
+        mAuth = FirebaseAuth.getInstance();
         getDriverComplaint();
 
-//        getSupportActionBar().hide();
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //getSupportActionBar().hide();
+        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
         navigationView = findViewById(R.id.driver_navigation_drawer);
         drawerLayout = findViewById(R.id.driver_drawer);
+
 
         navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -132,7 +132,7 @@ public class DriverHomeActivity extends AppCompatActivity implements ComplaintDr
                     cnt = cnt + 1;
                     complaintDriverAdapter.notifyDataSetChanged();
                 }
-
+/*
                 Collections.sort(complaintArrayList, new Comparator<Complaint>() {
                     @Override
                     public int compare(Complaint c1, Complaint c2) {
@@ -152,6 +152,7 @@ public class DriverHomeActivity extends AppCompatActivity implements ComplaintDr
                         return date1.compareTo(date2);
                     }
                 });
+*/
                 complaintDriverAdapter.notifyDataSetChanged();
             }
 
@@ -201,7 +202,7 @@ public class DriverHomeActivity extends AppCompatActivity implements ComplaintDr
         Button btnupdate = layout.findViewById(R.id.btn_update);
 
         String adminStatus = complaint.getAdminStatus();
-        if((adminStatus.equals("Cleaning Done")) || adminStatus.equals("Resolve")){
+        if((adminStatus.equals("Cleaning Done")) || adminStatus.equals("Complaint Resolved")){
             btnupdate.setVisibility(View.INVISIBLE);
         }
 
@@ -231,7 +232,7 @@ public class DriverHomeActivity extends AppCompatActivity implements ComplaintDr
         switch (id){
             case R.id.logout:
                 Toast.makeText(DriverHomeActivity.this,"User logged out",Toast.LENGTH_SHORT).show();
-
+                mAuth.signOut();
                 Intent it = new Intent(DriverHomeActivity.this,LoginActivity.class);
                 startActivity(it);
                 this.finish();
