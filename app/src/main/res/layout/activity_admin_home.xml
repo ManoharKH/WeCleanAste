@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:background="@color/backgrnd"
+    tools:context=".AdminHomeActivity"
+    android:id="@+id/admin_drawerlayout">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/admin_navigation_drawer"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/admin_header"
+        app:menu="@menu/admin_menu"
+        app:itemHorizontalPadding="40dp"
+        android:background="#0089BB"
+        android:theme="@style/navigationTheme"
+
+        />
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/id_framelayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+            android:id="@+id/bottom_nav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/id_framelayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:mbn_backgroundBottomColor="#323c7b"
+            app:mbn_circleColor="@color/white"
+            app:mbn_countBackgroundColor="#ff21a4"
+            app:mbn_countTextColor="@color/white"
+            app:mbn_defaultIconColor="@color/white"
+            app:mbn_selectedIconColor="#0089BB" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

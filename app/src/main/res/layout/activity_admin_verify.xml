@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:background="@color/backgrnd"
+    tools:context=".AdminVerifyActivity">
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/verify"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_address"
+        android:text="Address : "
+        android:textStyle="italic"
+        android:fontFamily="@font/chau_philomene_one"
+        android:textColor="@color/prim_text"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="@dimen/_10sdp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_citizenlatitude"
+        android:text="Citizen Latitude : "
+        android:textStyle="italic"
+        android:fontFamily="@font/chau_philomene_one"
+        android:textColor="@color/prim_text"
+        android:paddingLeft="@dimen/_10sdp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_citizenlongitude"
+        android:text="Citizen Longitude : "
+        android:textStyle="italic"
+        android:fontFamily="@font/chau_philomene_one"
+        android:textColor="@color/prim_text"
+        android:paddingLeft="@dimen/_10sdp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_driverlatitude"
+        android:text="Driver Latitude : "
+        android:textStyle="italic"
+        android:fontFamily="@font/chau_philomene_one"
+        android:textColor="@color/prim_text"
+        android:paddingLeft="@dimen/_10sdp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_driverlongitude"
+        android:text="Driver Longitude : "
+        android:textStyle="italic"
+        android:fontFamily="@font/chau_philomene_one"
+        android:paddingLeft="@dimen/_10sdp"
+        android:textColor="@color/prim_text"
+        />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Then :"
+        android:textStyle="italic"
+        android:fontFamily="@font/chau_philomene_one"
+        android:textColor="@color/prim_text"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:textSize="@dimen/_18sdp"
+        android:layout_marginTop="@dimen/_10sdp"/>
+
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/ic_launcher_background"
+        android:layout_marginStart="@dimen/_60sdp"
+        app:shapeAppearanceOverlay="@style/Corner"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Now :"
+        android:textStyle="italic"
+        android:fontFamily="@font/chau_philomene_one"
+        android:textColor="@color/prim_text"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:textSize="@dimen/_18sdp"
+        />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageView1"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        tools:srcCompat="@tools:sample/avatars"
+        android:layout_marginStart="@dimen/_60sdp"
+        app:shapeAppearanceOverlay="@style/Corner"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:orientation="horizontal">
+
+        <soup.neumorphism.NeumorphButton
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:id="@+id/btn_accept"
+            android:layout_marginLeft="20dp"
+            android:text="Accept"
+            android:textSize="20sp"
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/light_shadow"
+            app:neumorph_shadowElevation="@dimen/_4sdp"
+            android:fontFamily="@font/baloo"
+            android:textStyle="italic"
+            style="@style/ShapeAppearance.Neumorph.Button"
+            app:neumorph_shapeType="basin"
+            android:textAlignment="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingTop="@dimen/_10sdp"
+            android:textColor="@color/prim_text"/>
+
+        <soup.neumorphism.NeumorphButton
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/btn_reject"
+            android:text="Reject"
+            android:textSize="20sp"
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/light_shadow"
+            app:neumorph_shadowElevation="@dimen/_4sdp"
+            android:fontFamily="@font/baloo"
+            android:textStyle="italic"
+            style="@style/ShapeAppearance.Neumorph.Button"
+            app:neumorph_shapeType="basin"
+            android:textAlignment="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingTop="@dimen/_10sdp"
+            android:textColor="@color/prim_text"/>
+
+    </LinearLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

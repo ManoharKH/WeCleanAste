@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/college/Main Project/Final code/MyApplication1_naga2/MyApplication1/app/src/main/res/font/chau_philomene_one.xml" value="0.16041666666666668" />
+        <entry key="..\:/college/Main Project/Final code/MyApplication1_naga2/MyApplication1/app/src/main/res/layout/activity_add_driver_to_complaint.xml" value="0.12291666666666666" />
+        <entry key="..\:/college/Main Project/Final code/MyApplication1_naga2/MyApplication1/app/src/main/res/layout/activity_admin_verify.xml" value="0.11354166666666667" />
+        <entry key="..\:/college/Main Project/Final code/MyApplication1_naga2/MyApplication1/app/src/main/res/layout/activity_clean_and_update_by_driver.xml" value="0.12291666666666666" />
+        <entry key="..\:/college/Main Project/Final code/MyApplication1_naga2/MyApplication1/app/src/main/res/layout/activity_login.xml" value="0.12291666666666666" />
+        <entry key="..\:/college/Main Project/Final code/MyApplication1_naga2/MyApplication1/app/src/main/res/layout/driver_update.xml" value="0.12291666666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

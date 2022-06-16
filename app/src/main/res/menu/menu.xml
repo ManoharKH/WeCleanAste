@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/nav_home"
+            android:title="@string/home"
+            android:icon="@drawable/ic_nav_home"/>
+
+        <item android:id="@+id/nav_my_cmp"
+            android:title="@string/my_complaints"
+            android:icon="@drawable/ic_mycompsss"/>
+
+        <item android:title="@string/raise_complaints"
+            android:id="@+id/nav_raise_cmp"
+            android:icon="@drawable/ic_raisecomp"
+            />
+
+        <item android:title="@string/report_bug"
+            android:id="@+id/nav_reportbug"
+            android:icon="@drawable/ic_bug_report"
+            />
+
+
+
+        <item android:title="@string/privacy"
+            android:id="@+id/nav_privacy"
+            android:icon="@drawable/ic_privacy"
+
+            />
+
+
+
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item android:title="Profile">
+            <menu>
+                <item android:id="@+id/nav_profile"
+                    android:title="@string/Profile"
+                    android:icon="@drawable/ic_portrait"/>
+
+                <item android:title="@string/logout"
+                    android:id="@+id/nav_logout"
+                    android:icon="@drawable/ic_logout"
+                    />
+
+            </menu>
+
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item android:title="Communicate">
+            <menu>
+                <item android:id="@+id/nav_rate"
+                    android:title="@string/Rate"
+                    android:icon="@drawable/ic_rate"/>
+
+                <item android:title="@string/Share"
+                    android:id="@+id/nav_share"
+                    android:icon="@drawable/ic_baseline_share_24"
+                    />
+
+
+            </menu>
+
+
+        </item>
+
+    </group>
+
+</menu>

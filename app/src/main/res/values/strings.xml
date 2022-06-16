@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="view_all">View All</string>
+    <string name="home">Home</string>
+    <string name="my_complaints">My Complaints</string>
+    <string name="raise_complaints">Raise Complaints</string>
+    <string name="weclean">WeClean</string>
+    <string name="profile">profile</string>
+    <string name="Profile">Profile</string>
+    <string name="report_bug">Report Bug</string>
+    <string name="logout">Logout</string>
+    <string name="privacy">Privacy</string>
+    <string name="Rate">Rate</string>
+    <string name="Share">Share</string>
+    <string name="pending_complaints">Pending Complaints</string>
+</resources>

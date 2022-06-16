@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/backgrnd"
+    tools:context=".CleanAndUpdateByDriver">
+
+    <include
+        layout="@layout/driver_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_100sdp"
+        >
+
+        <soup.neumorphism.NeumorphTextView
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:text="Address :"
+            android:layout_marginRight="10dp"
+            android:drawableStart="@drawable/ic_location"
+            android:fontFamily="@font/chau_philomene_one"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="italic"
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/light_shadow"
+            android:elevation="@dimen/_4sdp"
+            android:textColor="@color/prim_text"
+            android:paddingLeft="@dimen/_10sdp"
+            />
+
+        <soup.neumorphism.NeumorphTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_address"
+            android:layout_marginVertical="10dp"
+            android:fontFamily="@font/chau_philomene_one"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="italic"
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/light_shadow"
+            android:elevation="@dimen/_4sdp"
+            android:textColor="@color/prim_text"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        >
+
+        <soup.neumorphism.NeumorphTextView
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:text="Lattitude :"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/chau_philomene_one"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="italic"
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/light_shadow"
+            android:elevation="@dimen/_4sdp"
+            android:textColor="@color/prim_text"
+            android:drawableStart="@drawable/ic_arrow"
+            android:paddingLeft="@dimen/_10sdp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_lattitute"
+            android:fontFamily="@font/chau_philomene_one"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="italic"
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/light_shadow"
+            android:elevation="@dimen/_4sdp"
+            android:textColor="@color/prim_text"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        >
+
+        <soup.neumorphism.NeumorphTextView
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:text="Longitude :"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/chau_philomene_one"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="italic"
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/light_shadow"
+            android:elevation="@dimen/_4sdp"
+            android:textColor="@color/prim_text"
+            android:drawableStart="@drawable/ic_arrow"
+            android:paddingLeft="@dimen/_10sdp"/>
+
+        <soup.neumorphism.NeumorphTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_longitude"
+            android:layout_marginVertical="10dp"
+            android:fontFamily="@font/chau_philomene_one"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="italic"
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/light_shadow"
+            android:elevation="@dimen/_4sdp"
+            android:textColor="@color/prim_text"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/_24sdp">
+
+        <soup.neumorphism.NeumorphButton
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:id="@+id/btn_getlocation"
+            android:text="Get location"
+            android:textAllCaps="false"
+            style="@style/ShapeAppearance.Neumorph.Button"
+            app:neumorph_shapeType="basin"
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/light_shadow"
+            app:neumorph_shadowElevation="@dimen/_5sdp"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/baloo"
+            android:textColor="@color/prim_text"
+            android:textSize="@dimen/_20sdp"
+            android:textAlignment="center"
+            android:textStyle="italic"
+            android:paddingTop="@dimen/_10sdp"
+            />
+
+        <soup.neumorphism.NeumorphButton
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:id="@+id/btn_submit"
+            android:text="Submit"
+            android:textAllCaps="false"
+            style="@style/ShapeAppearance.Neumorph.Button"
+            app:neumorph_shapeType="basin"
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/light_shadow"
+            app:neumorph_shadowElevation="@dimen/_5sdp"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/baloo"
+            android:textColor="@color/prim_text"
+            android:textSize="@dimen/_20sdp"
+            android:textAlignment="center"
+            android:textStyle="italic"
+            android:paddingTop="@dimen/_10sdp"/>
+
+        <soup.neumorphism.NeumorphButton
+            android:id="@+id/btn_maps"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:text="MAP"
+            android:textColor="#DFC907"
+            android:textSize="24sp"
+            style="@style/ShapeAppearance.Neumorph.Button"
+            app:neumorph_shapeType="basin"
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/light_shadow"
+            app:neumorph_shadowElevation="@dimen/_5sdp"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/baloo"
+            android:textAlignment="center"
+            android:textStyle="italic"
+            android:paddingTop="@dimen/_10sdp"
+            />
+
+
+
+
+    </LinearLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,0 +1,76 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MyApplication" parent="Theme.AppCompat.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <!-- Customize your theme here. -->
+
+
+
+
+
+    </style>
+
+    <style name="navigationTheme">
+
+        <item name="android:divider" >@drawable/menu_item_padding</item>
+        <item name="android:listDivider">@android:color/transparent</item>
+
+
+
+    </style>
+
+    <style name="Fullscreen" parent="Theme.MyApplication">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+
+    </style>
+
+    <style name="NeumorphismCard">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">@dimen/_10sdp</item>
+
+    </style>
+
+    <style name="NeumorphismImage">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">@dimen/_4sdp</item>
+
+    </style>
+
+    <style name="Circular" >
+        <item name="cornerSize" >50%</item>
+    </style>
+
+    <style name="Circ1">
+        <item name="cornerSize">70%</item>
+    </style>
+
+    <style name="Circ2">
+        <item name="cornerSize">60%</item>
+    </style>
+
+    <style name="Corner">
+        <item name="cornerSize">20%</item>
+    </style>
+
+
+
+
+
+
+
+    <!--<style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar"/>
+    <style name="AppTheme.popUpOverlay" parent="Theme.AppCompat.Light"/> -->
+
+</resources>

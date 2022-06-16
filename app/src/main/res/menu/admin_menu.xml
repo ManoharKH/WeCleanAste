@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item android:id="@+id/nav_home"
+            android:title="@string/home"
+            android:icon="@drawable/ic_nav_home"/>
+
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item android:title="Complaint Statuses">
+            <menu >
+                <item android:id="@+id/nav_pend_cmp"
+                    android:title="Pending Complaint"
+                    android:icon="@drawable/ic_pending"/>
+
+                <item android:title="Adding Driver"
+                    android:id="@+id/nav_add_driver"
+                    android:icon="@drawable/ic_add_driver"
+                    />
+
+                <item android:title="In Progress"
+                    android:id="@+id/nav_in_progress"
+                    android:icon="@drawable/ic_in_process"/>
+
+                <item android:title="Work Completed"
+                    android:id="@+id/nav_work_cmp"
+                    android:icon="@drawable/ic_work_completed"
+                    />
+
+                <item android:title="Resolved Complaint"
+                    android:id="@+id/nav_resolved_comp"
+                    android:icon="@drawable/ic_comp_resolved"
+                    />
+
+            </menu>
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item android:title="Profile">
+            <menu>
+                <item android:id="@+id/nav_admin_profile"
+                    android:title="@string/Profile"
+                    android:icon="@drawable/ic_portrait"/>
+
+                <item android:title="@string/logout"
+                    android:id="@+id/nav_admin_logout"
+                    android:icon="@drawable/ic_logout"
+                    />
+
+            </menu>
+
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item android:title="Communicate">
+            <menu>
+                <item android:id="@+id/nav_rate"
+                    android:title="@string/Rate"
+                    android:icon="@drawable/ic_rate"/>
+
+                <item android:title="@string/Share"
+                    android:id="@+id/nav_share"
+                    android:icon="@drawable/ic_baseline_share_24"
+                    />
+
+
+            </menu>
+
+
+        </item>
+
+    </group>
+
+</menu>

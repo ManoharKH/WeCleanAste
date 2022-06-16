@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/background_color"
+    tools:context=".CitizenRaiseComplaintFragment"
+    android:id="@+id/citizen_raisecomp_frag">
+
+    <include
+        android:id="@+id/toolbar1"
+        layout="@layout/toolbar_raisecomp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentStart="true" />
+
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="78dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="0dp"
+
+        android:fontFamily="@font/calligraffitti"
+        android:paddingLeft="16dp"
+        android:text="Hello!"
+        android:gravity="center_vertical"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/urhere"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar1"
+        app:layout_constraintVertical_bias="0.043" />
+
+    <TextView
+        android:id="@+id/urhere"
+        android:layout_width="195dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_circle_24"
+        android:fontFamily="@font/calligraffitti"
+        android:gravity="center"
+        android:paddingLeft="16dp"
+        android:text=" You are right here "
+        android:textColor="#DE3B3B"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/map_framelayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintVertical_bias="0.357" />
+
+    <fragment
+        android:id="@+id/map_framelayout"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="333dp"
+        android:layout_height="326dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="32dp"
+        android:layout_margin="20dp"
+        android:layout_marginEnd="39dp"
+        android:elevation="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.414" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/map_framelayout"
+        app:layout_constraintVertical_bias="0.128">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="Address"
+                android:textColor="@color/black"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/txt_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:textColor="@color/black"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="Lattitude"
+                android:textColor="@color/black"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/txt_lattitute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="Longitude"
+                android:visibility="gone"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/txt_longitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:textColor="@color/black"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <soup.neumorphism.NeumorphButton
+        android:id="@+id/btn_takePicture"
+        style="@style/ShapeAppearance.Neumorph.Button"
+        android:layout_width="260dp"
+        android:layout_height="71dp"
+        android:clickable="true"
+        android:drawableLeft="@drawable/ic_cam"
+        android:paddingLeft="50dp"
+        android:paddingRight="40dp"
+        android:focusable="true"
+        android:fontFamily="@font/chau_philomene_one"
+        android:gravity="center"
+        android:text="Take Picture"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.234"
+        app:neumorph_shadowColorDark="@color/shadow_color"
+        app:neumorph_shadowColorLight="@color/highlight"
+        app:neumorph_shapeType="flat">
+
+
+    </soup.neumorphism.NeumorphButton>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

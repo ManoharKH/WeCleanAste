@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".CitizenHomeFragment"
+    android:id="@+id/citizen_home_fragment">
+
+
+
+
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="304dp">
+
+                    <include
+                        android:id="@+id/toolbar"
+                        layout="@layout/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+
+
+
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="104dp"
+                        android:layout_marginEnd="26dp"
+                        android:src="@drawable/wc_logo" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="215dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="115dp"
+                        android:fontFamily="@font/baloo"
+                        android:paddingStart="40dp"
+                        android:text="@string/weclean"
+                        android:textColor="@color/black"
+                        android:textSize="30sp" />
+
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView"
+                        android:layout_marginTop="5dp"
+                        android:paddingLeft="66dp"
+                        android:text="Hello!"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView"
+                        android:layout_marginTop="25dp"
+                        android:paddingLeft="20dp"
+                        android:text="Responsible Citizen"
+                        android:textColor="@color/black"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/un"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textView"
+                        android:layout_marginTop="62dp"
+                        android:fontFamily="@font/baloo"
+                        android:paddingLeft="20dp"
+                        android:text="User Name"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="italic" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp">
+
+                    <RelativeLayout
+                        android:id="@+id/yclr"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/redp">
+
+                        <TextView
+                            android:id="@+id/raisew"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/baloo"
+                            android:padding="25dp"
+                            android:text="Raise"
+                            android:textColor="@color/black"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:id="@+id/compw"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:fontFamily="@font/baloo"
+                            android:padding="25dp"
+                            android:text="Complaint"
+                            android:textColor="@color/black"
+                            android:textSize="30sp" />
+
+                        <Button
+                            android:id="@+id/raisecomplaint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:background="#00000000"
+                            android:padding="20dp"
+                            android:text="Explore Here"
+                            android:textColor="@color/black" />
+
+
+                    </RelativeLayout>
+
+
+                    <ImageView
+                        android:id="@+id/rc_img"
+                        android:layout_width="209dp"
+                        android:layout_height="171dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="-2dp"
+
+                        android:layout_marginRight="0dp"
+                        android:src="@drawable/r_hnds" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/bclr"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/yel">
+
+                    <ImageView
+                        android:id="@+id/mc_img"
+                        android:layout_width="139dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="1dp"
+                        android:src="@drawable/mc" />
+
+                    <TextView
+                        android:id="@+id/myw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:fontFamily="@font/baloo"
+                        android:padding="25dp"
+                        android:text="My"
+                        android:textColor="@color/white"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:id="@+id/compww"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="30dp"
+                        android:fontFamily="@font/baloo"
+                        android:padding="25dp"
+                        android:text="Complaints"
+                        android:textColor="@color/white"
+                        android:textSize="30sp" />
+
+                    <Button
+                        android:id="@+id/mycomplaints"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="#00000000"
+                        android:padding="20dp"
+                        android:text="@string/view_all"
+                        android:textColor="@color/white" />
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
